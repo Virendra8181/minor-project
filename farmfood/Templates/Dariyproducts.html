@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
+     <!--swiper bundel-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    
+
+<body>
+    
+ <!--header section starts -->
+
+<header class="header">
+<span class="logo-background">
+    <a href="index.html" class="food-logo"> F!</a>
+</span>
+
+
+    
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}"  style="color: white;">home</a>
+        
+        <a href="{% url 'products' %}" style="color: white; ">products</a>
+        <a href="{% url 'categories' %}"  style="color: white;">categories</a>
+        <a href="review.html"  style="color: white;">About us</a>
+        <a href="{% url 'contactus' %}"  style="color: white;">contact us</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+    
+
+
+    
+
+</header>
+
+
+
+
+<!-- products section starts  -->
+
+<section class="products" id="products"> <br> <br> <br> <br>
+
+    <h1 class="heading"> our <span>  Dairy products </span> </h1>
+    {% comment %} <div class=" product-slider">
+
+        <div class="swiper-wrapper">
+        
+
+            <div class="swiper-slide box">
+                <img src="/static/image\milk images.jpg" alt="">
+                <h3 class="product-title"> milk</h3>
+                <div>
+                <span class="old-price">&#8377; 70</span>
+            <span class="new-price">&#8377; 50</span></div>
+                
+                <a href="#" class="btn">add to cart</a>
+            </div>
+
+            
+
+            <div class="swiper-slide box">
+                <img src="/static/image\cheese image.jpg" alt="">
+                <h3 class="product-title">cheese</h3>
+                <div>
+                    <span class="old-price"> &#8377; 36</span>
+                <span class="new-price">&#8377; 16</span></div>
+                
+                <a href="#" class="btn">add to cart</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="swiper product-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box">
+                <img src="/static/image\cream.jpg" alt="">
+                <h3 class="product-title"> Fresh Cream</h3>
+                <div>
+                    <span class="old-price">&#8377; 120</span>
+                <span class="new-price">&#8377; 100</span></div>
+                
+                <a href="#" class="btn">add to cart</a>
+            </div>
+
+            <div class="swiper-slide box">
+                <img src="/static/image\curd images.jpg" alt="">
+                <h3 class="product-title"> curd</h3>
+                <div>
+                    <span class="old-price">&#8377; 50</span>
+                <span class="new-price">&#8377; 30</span></div>
+                
+                <a href="#" class="btn">add to cart</a>
+            </div>
+
+            
+
+        </div>
+
+    </div> {% endcomment %}
+    <div class="swiper product-slider">
+
+        <div class="swiper-wrapper">
+            {%for i in data %}
+            <div class="swiper-slide box">
+                <img src="{{i.product_image.url}}" alt="connect" style="width:100*500">
+                <h3 class="product-title">{{i.Name}}</h3>
+               
+                
+                <div>
+                    <span class="old-price">&#8377; 80</span>
+                    <span class="new-price">&#8377;{{i.Price}}</span>
+                </div>
+                <a href="#" class="btn">add to cart</a>
+            </div> 
+            {% endfor %}}
+        </div>
+    </div>
+
+
+</section>
+
+<!-- products section ends -->
+
+
+
+
+
+
+            
+<!-- footer section starts  -->
+
+<section class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3> Fresh-Food</h3>
+            <p>Follow our social media account for more updates</p> </p>
+            <div class="share">
+                <a href="#" class="fab fa-facebook-f"></a>
+                
+                <a href="#" class="fab fa-instagram"></a>
+                
+            </div>
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 975-367-0098</a>
+            <a href="#" class="links"> <i class="fas fa-phone"></i> 706-751-5616</a>
+            <a href="#" class="links"> <i class="fas fa-envelope"></i> Freshfood@gmail.com </a>
+            <a href="#" class="links"> <i class="fas fa-map-marker-alt"></i> Indore, india - 452001</a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> home </a>
+            
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> products </a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> categories </a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i> About us </a>
+            <a href="#" class="links"> <i class="fas fa-arrow-right"></i>  contact us </a>
+        </div>
+
+        
+
+    </div>
+
+    <div class="credit"> created by <span> Fresh-Food </span> | all rights reserved </div>
+
+</section>
+
+<!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="/static/first.js"></script>
+<script src="/static/cart.js"> </script>
+
+
+</body>
+</html>

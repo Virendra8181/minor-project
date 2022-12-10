@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
+     <!---swiper bundel-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="/static/style.css">
+
+    
+
+<body>
+    
+ header section starts 
+
+<header class="header">
+<span class="logo-background">
+    <a href="index.html" class="food-logo"> F!</a>
+</span>
+
+
+    
+
+    <nav class="navbar">
+        <a href="{% url 'home' %}"  style="color: white;">home</a>
+        
+        <a href="{% url 'products' %}" style="color: white; ">products</a>
+        <a href="{% url 'categories' %}"  style="color: white;">categories</a>
+        <a href="review.html"  style="color: white;">About us</a>
+        <a href="{% url 'contactus' %}"  style="color: white;">contact us</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here...">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+
+
+</header> <br> <br>
+<!-- categories section starts  -->
+
+<section class="categories" id="categories"> <br> <br>
+
+    <h1 class="heading"> product <span>categories</span> </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <img src="/static/image/cat-1.png" alt="">
+            <h3>vegitables</h3>
+            <p style="color: orangered;">upto 20% off</p>
+            <a href="{% url 'veg' %}" class="btn">shop now</a>
+        </div>
+
+        <div class="box">
+            <img src="/static/image/cat-2.png" alt="">
+            <h3>fresh fruits</h3>
+            <p style="color: orangered;">upto 20% off</p>
+            <a href="{% url 'food' %}" class="btn">shop now</a>
+        </div>
+
+        <div class="box" >
+           
+            <img src="/static/image/cat-3.png" alt="">
+            <h3>dairy products</h3>
+            <p style="color: orangered;">upto 20% off</p>
+            <a href="{% url 'dairy' %}" class="btn">shop now</a>
+        </div>
+
+       
+    </div>
+
+</section>
